@@ -30,28 +30,23 @@ export class BienvenidaPage implements OnInit {
     this.info=this.posts.filter(item => item.userId == id);
     await this.storage.agregarPosts(this.id,this.info);
     this.interfaz = await this.storage.recuperar(this.id);
-    
-    
-    
-    
-    
-    
-
   }
+
+     // Si la sesión es cerrada el storage se limpia
   async cerrar_sesion(){
     const alerta = await this.alertController.create({
-      header: "hola!",
-      message:"¿quieres cerrar sesión?",
+      header: "Sesión actual",
+      message:"¿Desea cerrar su sesión?",
       buttons:[
-      {
-        text: "si",
+  {
+        text: "Si",
         handler: () =>{
           this.storage.eliminar(this.id)
           this.router.navigateByUrl("/login")
         }
       },
       {
-        text: "no",
+        text: "No",
         role: "cancel"
       }
       ]
