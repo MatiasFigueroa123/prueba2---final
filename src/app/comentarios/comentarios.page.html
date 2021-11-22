@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title ><h5 >tus comentarios</h5></ion-title>
+    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="bienvenida"></ion-back-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-buttons slot="start">
+    <ion-back-button defauldHref="bienvenida"></ion-back-button>
+  </ion-buttons>
+  <div  *ngFor= "let info of info" >
+    <ion-list id="texto">
+        <h1 >{{info.name}}</h1>
+        <h6 class="correo">{{info.email}}</h6>
+        <h4>{{info.body}}</h4>
+        
+    </ion-list>
+    
+    
+
+    
+  </div>
+</ion-content>

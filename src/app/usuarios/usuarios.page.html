@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="listado.length > 0">
+  <ion-list>
+    <div *ngFor="let i of listado" [RouterLink]="['/', i.id]">
+      <ion-item> 
+          <ion-label>
+            <h1>{{i.id}}</h1>
+            <h1>{{i.title}}</h1>
+            <p>{{i.body}}</p>
+          </ion-label> 
+      </ion-item>
+    </div>
+  </ion-list>
+</div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="listar()">
+      <ion-icon slot="icon-only" name="list"></ion-icon>
+    </ion-button>
+    <ion-button (click)="salir()" slot="end">
+      <ion-icon slot="icon-only" name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

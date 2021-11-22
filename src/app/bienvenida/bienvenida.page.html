@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title ><h5 >Duoc UC</h5></ion-title>
+    <ion-icon (click)="cerrar_sesion()" class="icono" name="person-outline"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class=" ion-padding" >
+    <ion-text color="black">
+      <h1>Bienvenido/a, {{datos.username}}</h1>
+    </ion-text>
+  </div>
+
+   <div id="texto" *ngFor= "let info of interfaz" [routerLink]="['../comentarios/',info.id]">
+    <ion-item>
+      <ion-label>
+        <h1>{{info.title}}</h1>
+        <p>{{info.body}}</p>
+      </ion-label>
+    </ion-item>
+  </div> 
+</ion-content>

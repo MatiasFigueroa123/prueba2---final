@@ -1,0 +1,59 @@
+ion-content{
+    --background: url(https://www.duoc.cl/wp-content/uploads/2020/06/Plaza-oeste.jpg) no-repeat center center/cover;
+}
+.login{
+  height: 80vh;
+  width: 100%;
+  max-width: 500px;
+  background: #ffff;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  margin: auto;
+  border-top-left-radius:46px;
+  border-top-right-radius: 46px;
+
+  .titulo{
+    margin-top: 20px;
+    h1{
+      font-size: 1.6rem;
+      font-weight: bolder;
+    }
+    p{
+      margin-top: 20px;
+      font-size: 1rem;
+      color: grey;
+    }
+  }
+  .formulario{
+    .inputs{
+      position: relative;
+      margin-bottom: 10px;
+      ion-item::part(native){
+      padding-left: 0;
+      }
+      ion-icon{
+        position: absolute;
+        top: 37px;
+        z-index: 2;
+        font-size:1.2rem ;
+        right: 5px;
+      }
+      
+      ion-input{
+        font-size:0.9rem;
+        --padding-start:36px;
+        --pading-top:36px;
+  
+      }
+    }
+  }
+  .botones{
+    text-align: center;
+    .boton_login{
+      width: 100%;
+      font-weight: bold;
+    }
+  }
+}
