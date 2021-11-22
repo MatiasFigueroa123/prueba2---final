@@ -23,13 +23,13 @@ export class BienvenidaPage implements OnInit {
     private api:ApirestService,private storage: StorageService,) { }
 
   async ngOnInit() {
-    this.datos = this.api.datos;//introducir los datos del usurio registrado
+    this.datos = this.api.datos;
     this.id = String(this.datos.id);
     let id = this.datos.id;
-    this.posts = this.api.posts;//obtener todos los post realizados
-    this.info=this.posts.filter(item => item.userId == id);//obtener solo los posts del usurio logueado
-    await this.storage.agregarPosts(this.id,this.info);//agragar los datos al local storage
-    this.interfaz = await this.storage.recuperar(this.id);//recuperar los datos del storage para mostrarlos
+    this.posts = this.api.posts;
+    this.info=this.posts.filter(item => item.userId == id);
+    await this.storage.agregarPosts(this.id,this.info);
+    this.interfaz = await this.storage.recuperar(this.id);
     
     
     
