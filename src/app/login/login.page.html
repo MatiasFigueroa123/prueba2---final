@@ -1,34 +1,39 @@
-<ion-content [scrollEvents]="true"
-(ionScrollStart)="logScrollStart()">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <div class="login ion-padding">
-    <div class="titulo ion-padding">
-      <h1> Bienvenido a Duoc Uc</h1>
-      <p>inicia sesion con tu cuenta</p>
-    </div>
-    <div class="formulario ion-padding">
-      <div class="inputs">
-        <ion-item>
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-label position="floating">nombre de usuario</ion-label>
-          <ion-input #user ></ion-input>
-        </ion-item><br>
-        <ion-item>
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <ion-label position="floating">contraseña</ion-label>
-          <ion-input type="password" #pass></ion-input>
-        </ion-item>
-      </div>
-    </div>
+
+<ion-content class ="ion-padding ion-text-center">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/2560px-Logo_DuocUC.svg.png
+    ">
+  </div>
+
+  <div class="formulario ">
+  <div> 
+    <ion-label>Usuario</ion-label>    
+    <ion-item lines="none">
+      <ion-input #user ></ion-input>
+    </ion-item>
+  </div>
+<div>
+  <ion-label>Contraseña</ion-label>
+  <ion-item lines="none">
+    <ion-input type="password" #pass></ion-input>  
+  </ion-item>
+</div>
     <div class="botones ion-padding">
-      <ion-button size="large" class="boton_login" (click)="iniciar(user, pass)"  >
-        iniciar 
+      <ion-button size="large" color="success" class="boton_login" (click)="iniciar(user, pass)"  >
+         Login
       </ion-button>
-      <p>¿olidaste tu contraseña?</p>
-      <a (click)="recuperar(user)"><p class="ion-text-center">recuperar contraseña</p> </a>
-
     </div>
-    
+ 
+  </div>
+<br>
 
-  </div>  
+  <ion-button fill="clear">Registrate!</ion-button>
+  <ion-button fill="clear">Haz olvidado tus credenciales?</ion-button>
+
 </ion-content>
