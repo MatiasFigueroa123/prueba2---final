@@ -66,15 +66,16 @@ export class LoginPage implements OnInit {
       await a.present();
     }
   }
+  //INICIAR > Se crea un listado para almacenar la informacion de los usuarios de la API, los cuales seran comparados para la validacion del login. Se guarda la id del usuario para su uso en el servicio
   async iniciar(user: HTMLInputElement,
     pass:HTMLInputElement){
-    this.listado = this.api.listado;//agregamos el listado de la api a una variable listado
+    this.listado = this.api.listado;
     let usuario = user.value;
     let contraseña =pass.value;
-    if(this.listado.find(item => item.username == usuario)&& this.loginservice.getcontraseña(contraseña) ){ //comparamos el usuario colacado por el cliente con los usurios de la api
-      this.usuarios=this.listado.find(item => item.username == usuario); //agregamos los datos del usuario encontrado a una variable
-      let id = this.usuarios.id //agregamos id del usurio de la api a una variable id
-      this.api.getDatosUser(id);//guardamos la id del usuario en la funcion getdatos para que quede guardado en el service
+    if(this.listado.find(item => item.username == usuario)&& this.loginservice.getcontraseña(contraseña) ){
+      this.usuarios=this.listado.find(item => item.username == usuario); 
+      let id = this.usuarios.id 
+      this.api.getDatosUser(id);
       this.datos = this.api.datos;
       this.router.navigateByUrl("/bienvenida");
       pass.value= "";
@@ -82,7 +83,7 @@ export class LoginPage implements OnInit {
       
     }else if(usuario == "" || contraseña==""){
       const error1 = await this.toastController.create({
-      message: 'debe llenar ambos campos',
+      message: 'Ambos campos deben ser rellenados correctamente',
       duration: 3000,
       color: 'warning'
       });
@@ -91,7 +92,7 @@ export class LoginPage implements OnInit {
     
     else{
       const error2 = await this.toastController.create({
-      message: 'contraseña y usuario incorrecto intente denuevo si la olvido precione recuperar contraseña',
+      message: 'Contraseña y usuario incorrecto intente nuevamente',
       duration: 3000,
       color: 'danger'
     });
