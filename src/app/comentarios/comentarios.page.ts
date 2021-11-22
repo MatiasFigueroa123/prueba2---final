@@ -16,16 +16,13 @@ export class ComentariosPage implements OnInit {
 
   ngOnInit() {
     this.leerComentatios();
-    
-    
-    
   }
   async leerComentatios(){
     let id = "";
     this.router.paramMap.subscribe(async parametros => {
       id = parametros.get("id");
     });
-    this.comentarios = this.api.comentarios;//obtener todos los post realizados
+    this.comentarios = this.api.comentarios;
     this.info =this.comentarios.filter(item => item.postId ==id)
     
     

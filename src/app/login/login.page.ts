@@ -31,7 +31,6 @@ export class LoginPage implements OnInit {
                 ) { }
 
   ngOnInit() {
-    //al
     this.storage.init();
     this.api.getUsers();
     this.api.getPost();
