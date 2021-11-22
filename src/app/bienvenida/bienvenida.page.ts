@@ -46,7 +46,7 @@ export class BienvenidaPage implements OnInit {
       {
         text: "si",
         handler: () =>{
-          this.storage.eliminar(this.id)//al cerrar sesion se bora el storage
+          this.storage.eliminar(this.id)
           this.router.navigateByUrl("/login")
         }
       },
